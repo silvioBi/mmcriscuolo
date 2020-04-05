@@ -1,0 +1,4 @@
+.parallax-banner .parallax-banner-layer-0 {
+    -webkit-transition: background-image 0.6s linear;
+    transition: background-image 0.6s linear;
+}

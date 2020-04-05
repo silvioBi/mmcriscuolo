@@ -1,0 +1,19 @@
+.menu {
+    padding-top: 1em;
+    text-align: center;
+    width: 100%;
+    background-color: white;
+}
+
+.menu .title {
+    font-size: 2em;
+}
+
+.menu .navigation {
+    display: flex;
+    justify-content: center;
+}
+
+.menu .navigation .navigation-item {
+    padding: 1em;
+}
