@@ -1,25 +1,25 @@
 import React from 'react';
 import ParallaxImageSlideshow from '../parallax/Parallax';
-import Cards from '../cards/Cards';
-import Caption from '../caption/Caption';
+import './Home.css'
+import { CardWithImage, CardWithImageProps } from '../cardWithImage/CardWithImage';
 
-export class Home extends React.Component {
+export interface HomeProps {
+    menuImages: string[];
+    cards: CardWithImageProps[];
+}
+
+export class Home extends React.Component<HomeProps, {}> {
+    private renderCard(card: CardWithImageProps) {
+        return <CardWithImage img={card.img} title={card.title} meta={card.meta} additionalInfo={card.additionalInfo} />;
+    }
+
     public render() {
         return (
             <>
-                <ParallaxImageSlideshow images={[
-                    'media/img/slideshow/artwork-1.jpeg', 'media/img/slideshow/artwork-2.jpeg'
-                ]} secondsInterval={6} />
-                <Cards cards={[
-                    { img: 'media/img/cards/artwork-3.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-4.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-5.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-6.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-7.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-8.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                    { img: 'media/img/cards/artwork-9.jpeg', caption: <Caption title={'SOMETHING BLA'} text={'Lorem ipsum sum'} date={'10/09/2020'}/> },
-                ]}
-                />
+                <ParallaxImageSlideshow images={this.props.menuImages} secondsInterval={6} />
+                <div className='cards'>
+                    {this.props.cards.map(this.renderCard)}
+                </div>
             </>
         );
     }

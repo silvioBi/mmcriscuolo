@@ -1,7 +1,8 @@
 import React from 'react';
 import './Menu.css';
-interface MenuProps {
+export interface MenuProps {
     onMenuItemClick: (value: string) => void;
+    title: string;
     selected: string;
 }
 
@@ -19,7 +20,7 @@ class Menu extends React.Component<MenuProps, {}> {
     public render() {
         return (
             <div className='menu'>
-                <div className='title'>MICHELE CRISCUOLO</div>
+                <div className='title'>{this.props.title}</div>
                 <div className='navigation'>
                     {this.renderMenuItem('HOME', 'home')}
                     {this.renderMenuItem('ARTWORKS', 'artworks')}
