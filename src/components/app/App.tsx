@@ -26,7 +26,7 @@ export class App extends React.Component<{}, AppState> {
   public render() {
     return (
       <>
-        <Menu onMenuItemClick={this.toggleTab} />
+        <Menu onMenuItemClick={this.toggleTab} selected={this.state.currentTab}/>
         {this.renderCurrentTab()}
         <Footer/>
       </>

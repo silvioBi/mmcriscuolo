@@ -6,14 +6,24 @@
 }
 
 .menu .title {
-    font-size: 2em;
+    font-size: 1.5em;
+    padding-top: .6em;
+    padding-bottom: 1.6em;
 }
 
 .menu .navigation {
     display: flex;
     justify-content: center;
+    font-size: .8em;
+    padding-bottom: 1.6em;
 }
 
 .menu .navigation .navigation-item {
+    cursor: pointer;
     padding: 1em;
+    color: #969490;
+}
+
+.menu .navigation .navigation-item.selected {
+    color: black;
 }
