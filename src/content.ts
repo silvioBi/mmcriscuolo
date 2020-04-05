@@ -33,7 +33,12 @@ const content: Content = {
             { img: artwork9, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', additionalInfo: '30 September 1993' },
         ],
     },
-    artworks: {},
+    artworks: {
+        artworks: [
+            { img: artwork3, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['nature'] },
+            { img: artwork4, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'sculptures', keywords: ['woman'] },
+        ],
+    },
     footer: {
         copyrightMessage: 'COPYRIGHT © 2020 MICHELE CRISCUOLO',
         social: {
