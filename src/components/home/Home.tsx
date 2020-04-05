@@ -10,7 +10,7 @@ export interface HomeProps {
 
 export class Home extends React.Component<HomeProps, {}> {
     private renderCard(card: CardWithImageProps) {
-        return <CardWithImage img={card.img} title={card.title} meta={card.meta} additionalInfo={card.additionalInfo} />;
+        return <CardWithImage key={card.img} img={card.img} title={card.title} meta={card.meta} additionalInfo={card.additionalInfo} />;
     }
 
     public render() {

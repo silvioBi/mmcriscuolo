@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../menu/Menu';
 import Home from '../home/Home';
 import Footer from '../footer/Footer';
+import Artworks from '../artworks/Artworks';
 import autobind from 'autobind-decorator';
 import content from '../../content'
 
@@ -21,7 +22,9 @@ export class App extends React.Component<{}, AppState> {
 
   public renderCurrentTab() {
     if (this.state.currentTab === 'home')
-      return <Home menuImages={content.home.menuImages} cards={content.home.cards}/>
+      return <Home {...content.home}/>
+    if (this.state.currentTab === 'artworks')
+      return <Artworks {...content.artworks}/>
   }
 
   public render() {

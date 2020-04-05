@@ -10,10 +10,12 @@ import artwork9 from './media/img/artworks/artwork-9.jpeg'
 
 import { FooterProps } from './components/footer/Footer'
 import { HomeProps } from './components/home/Home'
+import { ArtworksProps } from './components/artworks/Artworks';
 
 export interface Content {
     title: string;
     home: HomeProps,
+    artworks: ArtworksProps;
     footer: FooterProps;
 }
 
@@ -31,6 +33,7 @@ const content: Content = {
             { img: artwork9, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', additionalInfo: '30 September 1993' },
         ],
     },
+    artworks: {},
     footer: {
         copyrightMessage: 'COPYRIGHT © 2020 MICHELE CRISCUOLO',
         social: {

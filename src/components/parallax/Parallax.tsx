@@ -5,8 +5,8 @@ import './Parallax.css';
 
 interface ParallaxImageSlideshowState {
     layer: BannerLayer;
-    intervalId: NodeJS.Timeout;
-    current: number;
+    intervalId: NodeJS.Timeout | null;
+    current: number | null;
 }
 
 interface ParallaxImageSlideshowProps {
@@ -15,7 +15,17 @@ interface ParallaxImageSlideshowProps {
 }
 
 class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps, ParallaxImageSlideshowState> {
-    public componentWillMount() {
+    state = {
+        layer: {
+            image: '',
+            amount: 0,
+            children: null,
+        },
+        intervalId: null,
+        current: 0,
+    }
+
+    public componentDidMount() {
         this.setState({
             layer: {
                 image: this.props.images?.[0],
@@ -41,7 +51,7 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
     }
 
     public render() {
-        if(this.state.layer == null) {
+        if(this.state.intervalId == null) {
             return null;
         }
 
