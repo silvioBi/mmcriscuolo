@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/silvioBi/mmcriscuolo/static/css/main.be1b81c6.chunk.css",
+    "main.js": "/silvioBi/mmcriscuolo/static/js/main.a271e157.chunk.js",
+    "main.js.map": "/silvioBi/mmcriscuolo/static/js/main.a271e157.chunk.js.map",
+    "runtime-main.js": "/silvioBi/mmcriscuolo/static/js/runtime-main.bae12085.js",
+    "runtime-main.js.map": "/silvioBi/mmcriscuolo/static/js/runtime-main.bae12085.js.map",
+    "static/js/2.4289d56b.chunk.js": "/silvioBi/mmcriscuolo/static/js/2.4289d56b.chunk.js",
+    "static/js/2.4289d56b.chunk.js.map": "/silvioBi/mmcriscuolo/static/js/2.4289d56b.chunk.js.map",
+    "index.html": "/silvioBi/mmcriscuolo/index.html",
+    "precache-manifest.6fdb4acfa81ced0d92185f3a6a5048e2.js": "/silvioBi/mmcriscuolo/precache-manifest.6fdb4acfa81ced0d92185f3a6a5048e2.js",
+    "service-worker.js": "/silvioBi/mmcriscuolo/service-worker.js",
+    "static/css/main.be1b81c6.chunk.css.map": "/silvioBi/mmcriscuolo/static/css/main.be1b81c6.chunk.css.map",
+    "static/js/2.4289d56b.chunk.js.LICENSE.txt": "/silvioBi/mmcriscuolo/static/js/2.4289d56b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bae12085.js",
+    "static/js/2.4289d56b.chunk.js",
+    "static/css/main.be1b81c6.chunk.css",
+    "static/js/main.a271e157.chunk.js"
+  ]
+}
