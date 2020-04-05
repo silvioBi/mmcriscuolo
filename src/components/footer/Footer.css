@@ -1,0 +1,26 @@
+.footer {
+    border-top: 1px solid #C2C0BD;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .footer-title {
+    color: #969490;
+    font-size: .7em;
+}
+
+
+.footer .footer-socials,
+.footer .footer-title {
+    padding: 1em;
+}
+
+.footer .footer-socials .socials-icon {
+    width: 15px;
+    height: 15px;
+    padding-left: 10px;
+    cursor: pointer;
+}

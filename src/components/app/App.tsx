@@ -1,6 +1,7 @@
 import React from 'react';
 import Menu from '../menu/Menu';
 import Home from '../home/Home';
+import Footer from '../footer/Footer';
 import autobind from 'autobind-decorator';
 
 interface AppState {
@@ -27,6 +28,7 @@ export class App extends React.Component<{}, AppState> {
       <>
         <Menu onMenuItemClick={this.toggleTab} />
         {this.renderCurrentTab()}
+        <Footer/>
       </>
     );
   }
