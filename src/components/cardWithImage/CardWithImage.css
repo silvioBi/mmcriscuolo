@@ -10,3 +10,10 @@
     width: 300px;
     height: 300px;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px;
+}

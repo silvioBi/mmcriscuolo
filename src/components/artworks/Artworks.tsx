@@ -2,6 +2,7 @@ import React from 'react';
 
 import './Artworks.css';
 import autobind from 'autobind-decorator';
+import { CardWithImage } from '../cardWithImage/CardWithImage';
 
 export interface Artwork {
     title: string;
@@ -46,10 +47,14 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
         })
     }
 
+    private renderArtwork(artwork: Artwork) {
+        return <CardWithImage key={artwork.img} img={artwork.img} title={artwork.title} meta={artwork.meta} additionalInfo={artwork.year} />;
+    }
+
     @autobind
     private renderCategoryCheckbox(category: string) {
         return (
-            <div key={category} className='category-checkbox-container '>
+            <div key={category} className='category-checkbox-container'>
                 <label>
                     <input
                         key={category}
@@ -75,7 +80,7 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
         let artworks: Artwork[] = [],
             nothingSelected = Object.entries(this.state.selectedCategories).every(([category, selected]) => !selected);
         if (nothingSelected) {
-            return this.props.artworks.map(artwork => artwork.title).join(',');
+            return <div className='cards'>{this.props.artworks.map(this.renderArtwork)}</div>;
         }
         Object.entries(this.state.selectedCategories).forEach(([category, selected]) => {
             if (!selected)
@@ -85,7 +90,8 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
                     artworks.push(artwork)
             });
         });
-        return artworks.map(artwork => artwork.title).join(',');
+
+        return <div className='cards'>{artworks.map(this.renderArtwork)}</div>;
     }
 
     public render() {

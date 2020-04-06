@@ -37,6 +37,11 @@ const content: Content = {
         artworks: [
             { img: artwork3, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['nature'] },
             { img: artwork4, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'sculptures', keywords: ['woman'] },
+            { img: artwork5, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'digital art', keywords: ['woman'] },
+            { img: artwork6, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'digital art', keywords: ['woman'] },
+            { img: artwork7, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['woman'] },
+            { img: artwork8, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['woman'] },
+            { img: artwork9, title: 'SOMETHING BLA', meta: 'Lorem ipsum sum', year: '1993', category: 'sculptures', keywords: ['woman'] },
         ],
     },
     footer: {

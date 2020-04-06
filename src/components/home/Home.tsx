@@ -1,6 +1,5 @@
 import React from 'react';
 import ParallaxImageSlideshow from '../parallax/Parallax';
-import './Home.css'
 import { CardWithImage, CardWithImageProps } from '../cardWithImage/CardWithImage';
 
 export interface HomeProps {
