@@ -45,9 +45,9 @@ const content: Content = {
         artworks: [
             { img: artwork3, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['nature'], exhibitions: [] },
             { img: artwork4, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'sculptures', keywords: ['woman'], exhibitions: [] },
-            { img: artwork5, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'digital art', keywords: ['woman'], exhibitions: [] },
-            { img: artwork6, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'digital art', keywords: ['woman'], exhibitions: [] },
-            { img: artwork7, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['woman'], exhibitions: [] },
+            { img: artwork5, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'digital art', keywords: ['man'], exhibitions: [] },
+            { img: artwork6, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'special', keywords: ['whatever'], exhibitions: [] },
+            { img: artwork7, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'drawing', keywords: ['happiness'], exhibitions: [] },
             { img: artwork8, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'paintings', keywords: ['woman'], exhibitions: [] },
             { img: artwork9, title: 'SOMETHING BLA', technique: 'Poo on canvas', size: '23.7 x 23.7 x 0.5 cm', meta: 'Lorem ipsum sum', year: '1993', category: 'sculptures', keywords: ['woman'], exhibitions: [] },
         ],

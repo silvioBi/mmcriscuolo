@@ -91,7 +91,7 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
                         onChange={e => this.toggleCategory(category, e.target.checked)}
                         checked={selectedCategories[category]}
                     />
-                    {category.toLocaleUpperCase()}
+                    &nbsp;{category.toLocaleUpperCase()}
                 </label>
             </div>
         )

@@ -11,12 +11,12 @@ body {
 
 .regular-checkbox {
 	-webkit-appearance: none;
-	background-color: #fafafa;
+	background-color: #E4E3E1;
 	border: 1px solid #cacece;
 	padding: 6px;
 	display: inline-block;
-  position: relative;
-  margin-bottom: -1px;
+	position: relative;
+	margin-bottom: -1px;
 }
 
 .regular-checkbox:focus {
@@ -31,10 +31,10 @@ body {
 }
 
 .regular-checkbox:checked:after {
-	content: '\2714';
-	font-size: 10px;
+	content: '\10102';
+	font-size: 20px;
 	position: absolute;
-	top: 0px;
-	left: 2px;
+	top: -9.1px;
+	left: 1px;
 	color: #99a1a7;
 }
