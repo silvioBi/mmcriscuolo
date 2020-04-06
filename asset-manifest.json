@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mmcriscuolo/static/css/main.f8797034.chunk.css",
-    "main.js": "/mmcriscuolo/static/js/main.556a802f.chunk.js",
-    "main.js.map": "/mmcriscuolo/static/js/main.556a802f.chunk.js.map",
+    "main.css": "/mmcriscuolo/static/css/main.20cfb285.chunk.css",
+    "main.js": "/mmcriscuolo/static/js/main.1f66c7e7.chunk.js",
+    "main.js.map": "/mmcriscuolo/static/js/main.1f66c7e7.chunk.js.map",
     "runtime-main.js": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js",
     "runtime-main.js.map": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js.map",
     "static/js/2.6d22628c.chunk.js": "/mmcriscuolo/static/js/2.6d22628c.chunk.js",
     "static/js/2.6d22628c.chunk.js.map": "/mmcriscuolo/static/js/2.6d22628c.chunk.js.map",
     "index.html": "/mmcriscuolo/index.html",
-    "precache-manifest.ba8c438462a6ca2a2f11ed2e3280ea3f.js": "/mmcriscuolo/precache-manifest.ba8c438462a6ca2a2f11ed2e3280ea3f.js",
+    "precache-manifest.241ae0a62cb302d8522c0e69a0332156.js": "/mmcriscuolo/precache-manifest.241ae0a62cb302d8522c0e69a0332156.js",
     "service-worker.js": "/mmcriscuolo/service-worker.js",
-    "static/css/main.f8797034.chunk.css.map": "/mmcriscuolo/static/css/main.f8797034.chunk.css.map",
+    "static/css/main.20cfb285.chunk.css.map": "/mmcriscuolo/static/css/main.20cfb285.chunk.css.map",
     "static/js/2.6d22628c.chunk.js.LICENSE.txt": "/mmcriscuolo/static/js/2.6d22628c.chunk.js.LICENSE.txt",
     "static/media/artwork-1.jpeg": "/mmcriscuolo/static/media/artwork-1.3395f695.jpeg",
     "static/media/artwork-2.jpeg": "/mmcriscuolo/static/media/artwork-2.33f88ac7.jpeg",
@@ -36,7 +36,7 @@
   "entrypoints": [
     "static/js/runtime-main.4c9fd073.js",
     "static/js/2.6d22628c.chunk.js",
-    "static/css/main.f8797034.chunk.css",
-    "static/js/main.556a802f.chunk.js"
+    "static/css/main.20cfb285.chunk.css",
+    "static/js/main.1f66c7e7.chunk.js"
   ]
 }
