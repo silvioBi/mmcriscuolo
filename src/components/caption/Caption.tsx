@@ -1,7 +1,6 @@
 import React from 'react';
 import './Caption.css';
 
-// const Caption = ({ title, text, additionalInfo }) => (
 interface CaptionProps {
     title:string;
     text: string;

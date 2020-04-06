@@ -37,6 +37,13 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
         });
     }
 
+    public componentWillUnmount() {
+        if (this.state.intervalId == null)
+            return;
+        let intervalId: NodeJS.Timeout = this.state.intervalId as unknown as NodeJS.Timeout;
+        clearInterval(intervalId);
+    }
+
     @autobind
     private toggeImage() {
         let nextImageIdx = this.state.current + 1 < this.props.images.length ? this.state.current + 1 : 0;
@@ -51,14 +58,14 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
     }
 
     public render() {
-        if(this.state.intervalId == null) {
+        if (this.state.intervalId == null) {
             return null;
         }
 
         return (
             <ParallaxBanner
                 layers={[this.state.layer]}
-                style={{height: `${window.innerHeight - 168}px`}}
+                style={{ height: `${window.innerHeight - 168}px` }}
             />
         );
     }

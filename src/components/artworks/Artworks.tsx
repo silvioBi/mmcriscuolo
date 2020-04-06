@@ -3,12 +3,15 @@ import React from 'react';
 import './Artworks.css';
 import autobind from 'autobind-decorator';
 import { CardWithImage, Card } from '../cardWithImage/CardWithImage';
+import { Detail } from '../detail/Detail';
 
 export interface Artwork {
     title: string;
     img: string;
     meta: string;
     year: string;
+    technique: string;
+    size: string;
     category: string;
     keywords: string[];
 }
@@ -64,7 +67,13 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
     }
 
     @autobind
+    private toggleCategory(category: string, checked: boolean) {
+        this.setState({ selectedCategories: { ...this.state.selectedCategories, [category]: checked } });
+    }
+
+    @autobind
     private renderCategoryCheckbox(category: string) {
+        let selectedCategories: { [category: string]: boolean } = this.state.selectedCategories;
         return (
             <div key={category} className='category-checkbox-container'>
                 <label>
@@ -72,7 +81,8 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
                         key={category}
                         className='regular-checkbox'
                         type="checkbox"
-                        onChange={e => this.setState({ selectedCategories: { ...this.state.selectedCategories, [category]: e.target.checked } })}
+                        onChange={e => this.toggleCategory(category, e.target.checked)}
+                        checked={selectedCategories[category]}
                     />
                     {category.toLocaleUpperCase()}
                 </label>
@@ -84,6 +94,7 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
         if (this.state.selectedArtwork != null) {
             return null;
         }
+
         return (
             <div className='category-selector'>
                 {this.state.categories.map(this.renderCategoryCheckbox)}
@@ -112,12 +123,52 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
         return <div className='cards'>{artworks.map(this.renderArtworkPreview)}</div>;
     }
 
+    @autobind
+    private hideDetail() {
+        this.setState({ selectedArtwork: null });
+    }
+
+    private selectCategoryFromDetail(category: string) {
+        this.toggleCategory(category, true);
+        this.hideDetail();
+    }
+
+    private renderCategoryDetail(category: string) {
+        return (
+            <span
+                className='category-detail'
+                onClick={() => this.selectCategoryFromDetail(category)}
+            >
+                {category.toUpperCase()}
+            </span>
+        );
+    }
+
+    @autobind
     private renderSelectedArtwork() {
         if (this.state.selectedArtwork == null) {
             return null;
         }
         const artwork: Artwork = this.state.selectedArtwork as unknown as Artwork;
-        return artwork.title;
+        return (
+            <Detail
+                title={`${artwork.title}, ${artwork.year}`}
+                img={artwork.img}
+                sections={[
+                    {
+                        content: <>{artwork.meta}<br /><br /><i>{artwork.technique}</i><br /><br />{artwork.size}</>
+                    },
+                    {
+                        title: 'FIND SIMILAR ARTWORKS',
+                        content: this.renderCategoryDetail(artwork.category)
+                    },
+                    {
+                        content: <i className='link-back-to-artworks' onClick={this.hideDetail}>Go back to the artworks list</i>
+                    },
+                ]}
+                onClose={this.hideDetail}
+            />
+        );
     }
 
     public render() {

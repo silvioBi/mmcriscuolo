@@ -18,3 +18,12 @@
 .category-selector .category-checkbox-container input {
     cursor: pointer;
 }
+
+.category-detail {
+    cursor: pointer;
+}
+
+.link-back-to-artworks {
+    cursor: pointer;
+    text-decoration: underline;
+}
