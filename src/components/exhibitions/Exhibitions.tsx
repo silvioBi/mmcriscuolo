@@ -20,9 +20,13 @@ export interface ExhibitionsState {
     selectedExhibition: Exhibition | null;
     lastY: number;
 }
-
-export interface ExhibitionsProps {
+export interface ExhibitionsInterface {
     exhibitions: Exhibition[];
+}
+
+
+export interface ExhibitionsProps extends ExhibitionsInterface {
+    selectedElement: string | null;
 }
 
 
@@ -30,6 +34,14 @@ export default class Exhibitions extends React.Component<ExhibitionsProps, Exhib
     state = {
         selectedExhibition: null,
         lastY: 0,
+    }
+
+    public componentDidMount() {
+        const selectedExhibition = this.props.exhibitions.find(exhibition => exhibition.name === this.props.selectedElement) ?? null;
+        if (selectedExhibition) {
+            window.scrollTo(0, 170)
+            this.setState({ selectedExhibition })
+        }
     }
 
     @autobind

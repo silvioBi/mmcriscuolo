@@ -17,8 +17,12 @@ export interface Artwork {
     exhibitions: string[];
 }
 
-export interface ArtworksProps {
+export interface ArtworksInterface {
     artworks: Artwork[];
+}
+
+export interface ArtworksProps extends ArtworksInterface {
+    selectedElement: string | null;
 }
 
 export interface ArtworksState {
@@ -41,7 +45,13 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
     public componentDidMount() {
         let categories: Set<string> = new Set(),
             artworks: Artwork[] = [],
-            selectedCategories: { [category: string]: boolean } = {};
+            selectedCategories: { [category: string]: boolean } = {},
+            selectedArtwork: Artwork | null = null;
+
+        if (this.props.selectedElement != null) {
+            selectedArtwork = this.props.artworks.find(artwork => artwork.title === this.props.selectedElement) ?? null;
+        }
+
         this.props.artworks.forEach(artwork => {
             categories.add(artwork.category);
             artworks.push(artwork);
@@ -52,13 +62,14 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
             categories: Array.from(categories.values()),
             artworks,
             selectedCategories,
-        })
+            selectedArtwork,
+        }, () => selectedArtwork ? window.scrollTo(0, 300) : null)
     }
 
     @autobind
     private renderArtworkPreview(artwork: Artwork) {
         return <CardWithImage
-            key={artwork.img}
+            key={artwork.img + artwork.title}
             img={artwork.img}
             title={artwork.title}
             meta={artwork.meta}

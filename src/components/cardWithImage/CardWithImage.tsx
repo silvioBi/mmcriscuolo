@@ -19,7 +19,7 @@ export class CardWithImage extends React.Component<CardWithImageProps, {}> {
         const { img, title, meta, additionalInfo, type } = this.props;
         return (
             <div
-                key={img}
+                key={img + title}
                 className='card'
                 onClick={() => this.props.onClick != null ? this.props.onClick({ img, title, meta, additionalInfo, type }) : null}
             >

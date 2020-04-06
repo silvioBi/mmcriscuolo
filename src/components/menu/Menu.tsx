@@ -1,7 +1,7 @@
 import React from 'react';
 import './Menu.css';
 export interface MenuProps {
-    onMenuItemClick: (value: string) => void;
+    onMenuItemClick: (value: string, selectedElement: string | null, selectedElementType: string | null) => void;
     title: string;
     selected: string;
 }
@@ -13,7 +13,7 @@ class Menu extends React.Component<MenuProps, {}> {
             <span
                 key={value}
                 className={className}
-                onClick={() => this.props.onMenuItemClick(value)}>{label}
+                onClick={() => this.props.onMenuItemClick(value, null, null)}>{label}
             </span>
         );
     }
