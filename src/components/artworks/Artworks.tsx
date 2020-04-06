@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Artworks.css';
 import autobind from 'autobind-decorator';
 
@@ -48,13 +49,16 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
     @autobind
     private renderCategoryCheckbox(category: string) {
         return (
-            <div key={category} className='category-checkbox-container'>
-                {category}
-                <input
-                    key={category}
-                    type="checkbox"
-                    onChange={e => this.setState({ selectedCategories: { ...this.state.selectedCategories, [category]: e.target.checked } })}
-                />
+            <div key={category} className='category-checkbox-container '>
+                <label>
+                    <input
+                        key={category}
+                        className='regular-checkbox'
+                        type="checkbox"
+                        onChange={e => this.setState({ selectedCategories: { ...this.state.selectedCategories, [category]: e.target.checked } })}
+                    />
+                    {category.toLocaleUpperCase()}
+                </label>
             </div>
         )
     }
@@ -68,7 +72,6 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
     }
 
     private renderArtworks() {
-        console.log(this.state.selectedCategories)
         let artworks: Artwork[] = [],
             nothingSelected = Object.entries(this.state.selectedCategories).every(([category, selected]) => !selected);
         if (nothingSelected) {
