@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Artworks.css';
 import autobind from 'autobind-decorator';
-import { CardWithImage } from '../cardWithImage/CardWithImage';
+import { CardWithImage, Card } from '../cardWithImage/CardWithImage';
 
 export interface Artwork {
     title: string;
@@ -21,17 +21,19 @@ export interface ArtworksState {
     categories: string[];
     selectedCategories: { [category: string]: boolean }
     artworks: Artwork[];
+    selectedArtwork: Artwork | null;
 }
 
-export default class Artworks extends React.Component<ArtworksProps, {}> {
+export default class Artworks extends React.Component<ArtworksProps, ArtworksState> {
     state = {
         categories: [],
         artworks: [],
-        selectedCategories: {}
+        selectedCategories: {},
+        selectedArtwork: null,
     }
 
     public componentDidMount() {
-        let categories = new Set(),
+        let categories: Set<string> = new Set(),
             artworks: Artwork[] = [],
             selectedCategories: { [category: string]: boolean } = {};
         this.props.artworks.forEach(artwork => {
@@ -47,8 +49,18 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
         })
     }
 
-    private renderArtwork(artwork: Artwork) {
-        return <CardWithImage key={artwork.img} img={artwork.img} title={artwork.title} meta={artwork.meta} additionalInfo={artwork.year} />;
+    @autobind
+    private renderArtworkPreview(artwork: Artwork) {
+        return <CardWithImage
+            key={artwork.img}
+            img={artwork.img}
+            title={artwork.title}
+            meta={artwork.meta}
+            additionalInfo={artwork.year}
+            onClick={(card: Card) => this.setState({
+                selectedArtwork: this.state.artworks.find((artwork: Artwork) => artwork.img === card.img) ?? null
+            })}
+        />;
     }
 
     @autobind
@@ -69,6 +81,9 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
     }
 
     private renderCategorySelector() {
+        if (this.state.selectedArtwork != null) {
+            return null;
+        }
         return (
             <div className='category-selector'>
                 {this.state.categories.map(this.renderCategoryCheckbox)}
@@ -77,10 +92,13 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
     }
 
     private renderArtworks() {
+        if (this.state.selectedArtwork != null) {
+            return null;
+        }
         let artworks: Artwork[] = [],
             nothingSelected = Object.entries(this.state.selectedCategories).every(([category, selected]) => !selected);
         if (nothingSelected) {
-            return <div className='cards'>{this.props.artworks.map(this.renderArtwork)}</div>;
+            return <div className='cards'>{this.props.artworks.map(this.renderArtworkPreview)}</div>;
         }
         Object.entries(this.state.selectedCategories).forEach(([category, selected]) => {
             if (!selected)
@@ -91,7 +109,15 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
             });
         });
 
-        return <div className='cards'>{artworks.map(this.renderArtwork)}</div>;
+        return <div className='cards'>{artworks.map(this.renderArtworkPreview)}</div>;
+    }
+
+    private renderSelectedArtwork() {
+        if (this.state.selectedArtwork == null) {
+            return null;
+        }
+        const artwork: Artwork = this.state.selectedArtwork as unknown as Artwork;
+        return artwork.title;
     }
 
     public render() {
@@ -103,6 +129,7 @@ export default class Artworks extends React.Component<ArtworksProps, {}> {
                 <div className='artworks-title'>ARTWORKS</div>
                 {this.renderCategorySelector()}
                 {this.renderArtworks()}
+                {this.renderSelectedArtwork()}
             </div>
         );
     }
