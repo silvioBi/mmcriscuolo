@@ -58,7 +58,7 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
         return (
             <ParallaxBanner
                 layers={[this.state.layer]}
-                style={{height: '500px'}}
+                style={{height: `${window.innerHeight - 168}px`}}
             />
         );
     }
