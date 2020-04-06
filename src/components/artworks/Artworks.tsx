@@ -14,6 +14,7 @@ export interface Artwork {
     size: string;
     category: string;
     keywords: string[];
+    exhibitions: string[];
 }
 
 export interface ArtworksProps {
@@ -25,6 +26,7 @@ export interface ArtworksState {
     selectedCategories: { [category: string]: boolean }
     artworks: Artwork[];
     selectedArtwork: Artwork | null;
+    lastY: number;
 }
 
 export default class Artworks extends React.Component<ArtworksProps, ArtworksState> {
@@ -33,6 +35,7 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
         artworks: [],
         selectedCategories: {},
         selectedArtwork: null,
+        lastY: 0,
     }
 
     public componentDidMount() {
@@ -59,10 +62,14 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
             img={artwork.img}
             title={artwork.title}
             meta={artwork.meta}
+            type={'artwork'}
             additionalInfo={artwork.year}
-            onClick={(card: Card) => this.setState({
-                selectedArtwork: this.state.artworks.find((artwork: Artwork) => artwork.img === card.img) ?? null
-            })}
+            onClick={(card: Card) => {
+                this.setState({
+                    selectedArtwork: this.state.artworks.find((artwork: Artwork) => artwork.img === card.img) ?? null,
+                    lastY: window.scrollY,
+                }, () => window.scrollTo(0, 300));
+            }}
         />;
     }
 
@@ -125,7 +132,10 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
 
     @autobind
     private hideDetail() {
-        this.setState({ selectedArtwork: null });
+        const lastY = this.state.lastY
+        this.setState({ selectedArtwork: null, lastY: 0 }, () => {
+            window.scrollTo(0, lastY);
+        });
     }
 
     private selectCategoryFromDetail(category: string) {

@@ -24,7 +24,7 @@ class Menu extends React.Component<MenuProps, {}> {
                 <div className='navigation'>
                     {this.renderMenuItem('HOME', 'home')}
                     {this.renderMenuItem('ARTWORKS', 'artworks')}
-                    {this.renderMenuItem('EXIBITIONS', 'exibitions')}
+                    {this.renderMenuItem('EXHIBITIONS', 'exhibitions')}
                     {this.renderMenuItem('BIOGRAPHY', 'biography')}
                     {this.renderMenuItem('CONTACT', 'contact')}
                 </div>

@@ -6,7 +6,8 @@ export interface Card {
     img: string;
     title: string;
     meta: string;
-    additionalInfo: string;
+    additionalInfo: string;    
+    type: string;
 }
 
 export interface CardWithImageProps extends Card {
@@ -15,12 +16,12 @@ export interface CardWithImageProps extends Card {
 
 export class CardWithImage extends React.Component<CardWithImageProps, {}> {
     public render() {
-        const { img, title, meta, additionalInfo } = this.props;
+        const { img, title, meta, additionalInfo, type } = this.props;
         return (
             <div
                 key={img}
                 className='card'
-                onClick={() => this.props.onClick != null ? this.props.onClick({ img, title, meta, additionalInfo }) : null}
+                onClick={() => this.props.onClick != null ? this.props.onClick({ img, title, meta, additionalInfo, type }) : null}
             >
                 <img src={img} alt={title}></img>
                 <Caption title={title} text={meta} additionalInfo={additionalInfo} />

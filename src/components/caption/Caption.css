@@ -5,7 +5,11 @@
 }
 
 .caption .caption-title {
-    font-size: 1.5em;
+    font-size: 1.1em;
+}
+
+.caption .caption-text {
+    font-size: .9em;
 }
 
 .caption .caption-additional-info {
