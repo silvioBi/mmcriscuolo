@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0472d601373e4dfcb2ca64ddc34c1369",
+    "revision": "eb7aaff5144437171a5f8fecfe59bc42",
     "url": "/mmcriscuolo/index.html"
   },
   {
-    "revision": "d561aa6577cf6e326e96",
-    "url": "/mmcriscuolo/static/css/main.a4fb4d3e.chunk.css"
+    "revision": "102bf0c7a0b7fe8a2139",
+    "url": "/mmcriscuolo/static/css/main.f8797034.chunk.css"
   },
   {
-    "revision": "6bd28060c6ec785c1a33",
-    "url": "/mmcriscuolo/static/js/2.9b4be2c2.chunk.js"
+    "revision": "435de2c5b310d4962885",
+    "url": "/mmcriscuolo/static/js/2.6d22628c.chunk.js"
   },
   {
     "revision": "5ac48c47bb3912b14c2d8de4f56d5ae8",
-    "url": "/mmcriscuolo/static/js/2.9b4be2c2.chunk.js.LICENSE.txt"
+    "url": "/mmcriscuolo/static/js/2.6d22628c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d561aa6577cf6e326e96",
-    "url": "/mmcriscuolo/static/js/main.b9171a1b.chunk.js"
+    "revision": "102bf0c7a0b7fe8a2139",
+    "url": "/mmcriscuolo/static/js/main.556a802f.chunk.js"
   },
   {
     "revision": "2e074d99baab9954baf1",
