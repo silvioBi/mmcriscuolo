@@ -44,7 +44,6 @@
     font-size: .8em;
     column-count: 2;
     column-width: 150px;
-    text-align: center;
     margin: 6em;
     padding-left: 3em;
     padding-right: 3em;
@@ -60,4 +59,12 @@
 .link-back-to-exhibitions {
     cursor: pointer;
     text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .exhibition-long-description {
+        padding-left: .7em;
+        padding-right:.7em;
+    }
 }

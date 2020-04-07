@@ -63,7 +63,7 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
             artworks,
             selectedCategories,
             selectedArtwork,
-        }, () => selectedArtwork ? window.scrollTo(0, 300) : null)
+        }, () => selectedArtwork ? (window.innerWidth > 600 ? window.scrollTo(0, 300) : window.scrollTo(0, 280)) : null)
     }
 
     @autobind
@@ -79,7 +79,7 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
                 this.setState({
                     selectedArtwork: this.state.artworks.find((artwork: Artwork) => artwork.img === card.img) ?? null,
                     lastY: window.scrollY,
-                }, () => window.scrollTo(0, 300));
+                }, () => window.innerWidth > 600 ? window.scrollTo(0, 300) : window.scrollTo(0, 280));
             }}
         />;
     }
