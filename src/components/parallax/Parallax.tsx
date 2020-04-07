@@ -6,7 +6,9 @@ import './Parallax.css';
 interface ParallaxImageSlideshowState {
     layer: BannerLayer;
     intervalId: NodeJS.Timeout | null;
-    current: number | null;
+    current: number;
+    loaded: boolean[];
+    allLoaded: boolean;
 }
 
 interface ParallaxImageSlideshowProps {
@@ -15,15 +17,6 @@ interface ParallaxImageSlideshowProps {
 }
 
 class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps, ParallaxImageSlideshowState> {
-    state = {
-        layer: {
-            image: '',
-            amount: 0,
-            children: null,
-        },
-        intervalId: null,
-        current: 0,
-    }
 
     public componentDidMount() {
         this.setState({
@@ -32,9 +25,37 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
                 amount: 0.8,
                 children: null,
             },
-            intervalId: setInterval(this.toggeImage, this.props.secondsInterval * 1000),
+            loaded: [true].concat(Array(this.props.images.length - 1).fill(false)),
+            allLoaded: false,
+            intervalId: null,
             current: 0,
-        });
+        })
+    }
+
+    @autobind
+    private checkIfAllLoadedAndStartSlideshow(imgIdx: number) {
+        let loaded: boolean[] = [...this.state.loaded];
+        loaded[imgIdx] = true;
+        if (loaded.every(imgLoaded => imgLoaded) && !this.state.allLoaded) {
+            console.log('all loaded, starting slideshow')
+            this.setState({
+                allLoaded: true,
+                loaded,
+                intervalId: setInterval(this.toggeImage, this.props.secondsInterval * 1000),
+            });
+        }
+        else
+            this.setState({ loaded });
+    }
+
+    public componentDidUpdate() {
+        for (let i = 0; i < this.props.images.length; i++) {
+            if (this.state.loaded[i])
+                continue
+            const img = new Image();
+            img.src = this.props.images[i]; // by setting an src, you trigger browser download
+            img.onload = () => this.checkIfAllLoadedAndStartSlideshow(i);
+        }
     }
 
     public componentWillUnmount() {
@@ -58,7 +79,7 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
     }
 
     public render() {
-        if (this.state.intervalId == null) {
+        if (this.state == null) {
             return null;
         }
 
