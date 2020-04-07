@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mmcriscuolo/static/css/main.20cfb285.chunk.css",
-    "main.js": "/mmcriscuolo/static/js/main.1f66c7e7.chunk.js",
-    "main.js.map": "/mmcriscuolo/static/js/main.1f66c7e7.chunk.js.map",
+    "main.css": "/mmcriscuolo/static/css/main.55bca2c7.chunk.css",
+    "main.js": "/mmcriscuolo/static/js/main.fc0249e0.chunk.js",
+    "main.js.map": "/mmcriscuolo/static/js/main.fc0249e0.chunk.js.map",
     "runtime-main.js": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js",
     "runtime-main.js.map": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js.map",
-    "static/js/2.6d22628c.chunk.js": "/mmcriscuolo/static/js/2.6d22628c.chunk.js",
-    "static/js/2.6d22628c.chunk.js.map": "/mmcriscuolo/static/js/2.6d22628c.chunk.js.map",
+    "static/js/2.6730adbe.chunk.js": "/mmcriscuolo/static/js/2.6730adbe.chunk.js",
+    "static/js/2.6730adbe.chunk.js.map": "/mmcriscuolo/static/js/2.6730adbe.chunk.js.map",
     "index.html": "/mmcriscuolo/index.html",
-    "precache-manifest.241ae0a62cb302d8522c0e69a0332156.js": "/mmcriscuolo/precache-manifest.241ae0a62cb302d8522c0e69a0332156.js",
+    "precache-manifest.0901c2b6b79dda2aa7adeb91aeb0e40c.js": "/mmcriscuolo/precache-manifest.0901c2b6b79dda2aa7adeb91aeb0e40c.js",
     "service-worker.js": "/mmcriscuolo/service-worker.js",
-    "static/css/main.20cfb285.chunk.css.map": "/mmcriscuolo/static/css/main.20cfb285.chunk.css.map",
-    "static/js/2.6d22628c.chunk.js.LICENSE.txt": "/mmcriscuolo/static/js/2.6d22628c.chunk.js.LICENSE.txt",
+    "static/css/main.55bca2c7.chunk.css.map": "/mmcriscuolo/static/css/main.55bca2c7.chunk.css.map",
+    "static/js/2.6730adbe.chunk.js.LICENSE.txt": "/mmcriscuolo/static/js/2.6730adbe.chunk.js.LICENSE.txt",
     "static/media/artwork-1.jpeg": "/mmcriscuolo/static/media/artwork-1.3395f695.jpeg",
     "static/media/artwork-2.jpeg": "/mmcriscuolo/static/media/artwork-2.33f88ac7.jpeg",
     "static/media/artwork-3.jpeg": "/mmcriscuolo/static/media/artwork-3.28f89133.jpeg",
@@ -21,6 +21,7 @@
     "static/media/artwork-7.jpeg": "/mmcriscuolo/static/media/artwork-7.501cb466.jpeg",
     "static/media/artwork-8.jpeg": "/mmcriscuolo/static/media/artwork-8.3670d2f8.jpeg",
     "static/media/artwork-9.jpeg": "/mmcriscuolo/static/media/artwork-9.5b4cc9f6.jpeg",
+    "static/media/bio.png": "/mmcriscuolo/static/media/bio.825a9621.png",
     "static/media/exhibition-1.jpeg": "/mmcriscuolo/static/media/exhibition-1.e8b8778b.jpeg",
     "static/media/exhibition-2.jpeg": "/mmcriscuolo/static/media/exhibition-2.ce3b1c98.jpeg",
     "static/media/exhibition-3.jpeg": "/mmcriscuolo/static/media/exhibition-3.9cc9f7af.jpeg",
@@ -35,8 +36,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4c9fd073.js",
-    "static/js/2.6d22628c.chunk.js",
-    "static/css/main.20cfb285.chunk.css",
-    "static/js/main.1f66c7e7.chunk.js"
+    "static/js/2.6730adbe.chunk.js",
+    "static/css/main.55bca2c7.chunk.css",
+    "static/js/main.fc0249e0.chunk.js"
   ]
 }
