@@ -9,7 +9,6 @@ export interface DetailProps {
     img: string;
     title: string;
     sections: Section[];
-    onClose: () => void;
 }
 
 export class Detail extends React.Component<DetailProps, {}> {

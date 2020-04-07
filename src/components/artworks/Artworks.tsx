@@ -187,7 +187,6 @@ export default class Artworks extends React.Component<ArtworksProps, ArtworksSta
                         content: <i className='link-back-to-artworks' onClick={this.hideDetail}>Go back to the artworks list</i>
                     },
                 ]}
-                onClose={this.hideDetail}
             />
         );
     }

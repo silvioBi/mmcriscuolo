@@ -6,6 +6,7 @@ import Artworks from '../artworks/Artworks';
 import autobind from 'autobind-decorator';
 import content from '../../content'
 import Exhibitions from '../exhibitions/Exhibitions';
+import Bio from '../bio/Bio';
 
 interface AppState {
   currentTab: string;
@@ -30,6 +31,8 @@ export class App extends React.Component<{}, AppState> {
     const {selectedElement, selectedElementType} = this.state;
     if (this.state.currentTab === 'home')
       return <Home {...content.home} onCardClick={this.toggleTab}/>
+    if (this.state.currentTab === 'biography')
+      return <Bio {...content.bio} />
     if (this.state.currentTab === 'artworks')
       return <Artworks {...content.artworks} selectedElement={selectedElementType === 'artworks' ? selectedElement : null}/>
     if (this.state.currentTab === 'exhibitions')
