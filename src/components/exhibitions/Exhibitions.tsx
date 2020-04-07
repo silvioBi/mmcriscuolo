@@ -39,7 +39,7 @@ export default class Exhibitions extends React.Component<ExhibitionsProps, Exhib
     public componentDidMount() {
         const selectedExhibition = this.props.exhibitions.find(exhibition => exhibition.name === this.props.selectedElement) ?? null;
         if (selectedExhibition) {
-            window.scrollTo(0, 170)
+            window.scrollTo(0, 150)
             this.setState({ selectedExhibition })
         }
     }
@@ -128,7 +128,7 @@ export default class Exhibitions extends React.Component<ExhibitionsProps, Exhib
             onClick={(card: Card) => this.setState({
                 selectedExhibition: this.props.exhibitions.find((exhibition: Exhibition) => exhibition.img === card.img) ?? null,
                 lastY: window.scrollY,
-            }, () => window.scrollTo(0, 170))}
+            }, () => window.scrollTo(0, 150))}
         />;
     }
 

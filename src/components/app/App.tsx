@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from '../menu/Menu';
 import Home from '../home/Home';
 import Footer from '../footer/Footer';
+import Contacts from '../contacts/Contacts';
 import Artworks from '../artworks/Artworks';
 import autobind from 'autobind-decorator';
 import content from '../../content'
@@ -33,6 +34,8 @@ export class App extends React.Component<{}, AppState> {
       return <Home {...content.home} onCardClick={this.toggleTab}/>
     if (this.state.currentTab === 'biography')
       return <Bio {...content.bio} />
+      if (this.state.currentTab === 'contact')
+      return <Contacts {...content.contacts} />
     if (this.state.currentTab === 'artworks')
       return <Artworks {...content.artworks} selectedElement={selectedElementType === 'artworks' ? selectedElement : null}/>
     if (this.state.currentTab === 'exhibitions')
