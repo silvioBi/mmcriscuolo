@@ -78,7 +78,7 @@ export default class Exhibitions extends React.Component<ExhibitionsProps, Exhib
         return (
             <div className='slider-container'>
                 <Slider {...settings}>
-                    {exhibition.galleryImages.map(image => <div key={image}><img src={image} /></div>)}
+                    {exhibition.galleryImages.map(image => <div key={image}><img src={image} alt=''/></div>)}
                 </Slider>
             </div>
         )

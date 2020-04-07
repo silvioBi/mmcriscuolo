@@ -1,6 +1,7 @@
 import React from 'react';
 import './CardWithImage.css';
 import Caption from '../caption/Caption';
+import { LazyLoadedImage } from '../lazyLoadedImage/LazyLoadedImage';
 
 export interface Card {
     img: string;
@@ -23,7 +24,7 @@ export class CardWithImage extends React.Component<CardWithImageProps, {}> {
                 className='card'
                 onClick={() => this.props.onClick != null ? this.props.onClick({ img, title, meta, additionalInfo, type }) : null}
             >
-                <img src={img} alt={title}></img>
+                <LazyLoadedImage src={img} alt={title} width={300} height={300}/>
                 <Caption title={title} text={meta} additionalInfo={additionalInfo} />
             </div>
         );
