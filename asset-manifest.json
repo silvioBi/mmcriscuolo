@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mmcriscuolo/static/css/main.0c96a83e.chunk.css",
-    "main.js": "/mmcriscuolo/static/js/main.c015f639.chunk.js",
-    "main.js.map": "/mmcriscuolo/static/js/main.c015f639.chunk.js.map",
+    "main.js": "/mmcriscuolo/static/js/main.41176b5f.chunk.js",
+    "main.js.map": "/mmcriscuolo/static/js/main.41176b5f.chunk.js.map",
     "runtime-main.js": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js",
     "runtime-main.js.map": "/mmcriscuolo/static/js/runtime-main.4c9fd073.js.map",
     "static/js/2.41ccd40e.chunk.js": "/mmcriscuolo/static/js/2.41ccd40e.chunk.js",
     "static/js/2.41ccd40e.chunk.js.map": "/mmcriscuolo/static/js/2.41ccd40e.chunk.js.map",
     "index.html": "/mmcriscuolo/index.html",
-    "precache-manifest.6f7ec9ca0c1fa8632d59db2412d8db27.js": "/mmcriscuolo/precache-manifest.6f7ec9ca0c1fa8632d59db2412d8db27.js",
+    "precache-manifest.17da1ebdd5ebbae7d76f06681f54a6bb.js": "/mmcriscuolo/precache-manifest.17da1ebdd5ebbae7d76f06681f54a6bb.js",
     "service-worker.js": "/mmcriscuolo/service-worker.js",
     "static/css/main.0c96a83e.chunk.css.map": "/mmcriscuolo/static/css/main.0c96a83e.chunk.css.map",
     "static/js/2.41ccd40e.chunk.js.LICENSE.txt": "/mmcriscuolo/static/js/2.41ccd40e.chunk.js.LICENSE.txt",
@@ -24,6 +24,6 @@
     "static/js/runtime-main.4c9fd073.js",
     "static/js/2.41ccd40e.chunk.js",
     "static/css/main.0c96a83e.chunk.css",
-    "static/js/main.c015f639.chunk.js"
+    "static/js/main.41176b5f.chunk.js"
   ]
 }
