@@ -25,7 +25,7 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
                 amount: 0.8,
                 children: null,
             },
-            loaded: [true].concat(Array(this.props.images.length - 1).fill(false)),
+            loaded: Array(this.props.images.length).fill(false),
             allLoaded: false,
             intervalId: null,
             current: 0,
@@ -37,7 +37,6 @@ class ParallaxImageSlideshow extends React.Component<ParallaxImageSlideshowProps
         let loaded: boolean[] = [...this.state.loaded];
         loaded[imgIdx] = true;
         if (loaded.every(imgLoaded => imgLoaded) && !this.state.allLoaded) {
-            console.log('all loaded, starting slideshow')
             this.setState({
                 allLoaded: true,
                 loaded,
